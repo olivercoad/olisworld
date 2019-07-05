@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>olisword</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+    <script defer src="music.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <a class="card dev" href="https://github.com/olivercoad">
+            <div>
+                <h1>Code</h1>
+                <p>Dev blog</p>
+            </div>
+        </a>
+        <a class="card music" id="musiccard" href="https://soundcloud.com/oli_coad">
+            <div>
+                <h1>Music</h1>
+                <p>Recordings</p>
+                <div class="canvas" id="musiccanvas"></div>
+            </div>
+        </a>
+        <!-- <a class="card photos" href="photos.olisworld.com">
+            <div>
+                <h1>Photos</h1>
+                <p>Albums</p>
+            </div>
+        </a>
+        <a class="card science" href="science.olisworld.com">
+            <div>
+                <h1>Science</h1>
+                <p>Videos</p>
+            </div>
+        </a> -->
+    </div>
+    <script>
+        //when using touch, only allow click after already hovering
+        document.querySelectorAll("a.card").forEach(el => {
+            el.ontouchstart = () => {
+                if (el.matches(":hover")) {
+                    el.onclick = () => true;
+                }
+                else if (el.matches(".hidep")) {
+                    el.onclick = () => false;
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>
