@@ -2,7 +2,8 @@ let code = function (p) {
     let codeFiles = [
         "https://raw.githubusercontent.com/cdilga/erinome-server/master/src/Server/Server.fs",
         "https://raw.githubusercontent.com/cdilga/erinome-server/master/src/Server/ZeitAPI.fs",
-        "https://raw.githubusercontent.com/olivercoad/olisworld/master/style.css"
+        "https://raw.githubusercontent.com/olivercoad/olisworld/master/style.css",
+        "https://raw.githubusercontent.com/olivercoad/olisworld/master/code.js"
     ]
 
     let code = [];

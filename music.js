@@ -25,8 +25,13 @@ var music = function(p) {
     let numNotes = p.floor(p.map(p.width, 400, 800, 20, 40));
     while(t < p.frameCount + p.width + 50) {
       let o1 = p.noise(1000 + t / 2); //short peaks
-      let o2 = p.noise(t / 20); //waveform shape
-      hueLerp = p.lerp(hueLerp, p.mouseY, 0.02);
+      let o2 = p.noise(t / 20); //waveform shape  
+      let lerpTo = p.mouseY;
+      if(p.frameCount < 10 || p.mouseX < 0 || p. mouseX > p.width
+        || p.mouseY < 0 || p.mouseY > p.height) {
+          lerpTo = p.height * p.noise(t/50);
+        }
+      hueLerp = p.lerp(hueLerp, lerpTo, 0.1);
       vals.push({hue: hueLerp, val: p.height * p.abs(0.1 * o1 + 0.5 * o2 - 0.15)});
       
       let isNote = t % (p.width / numNotes) < 1;
