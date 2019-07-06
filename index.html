@@ -7,17 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>olisword</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
-    <script defer src="music.js"></script>
 </head>
 
 <body>
 
     <div class="container">
-        <a class="card dev" href="https://github.com/olivercoad">
+        <a class="card dev" id="codecard" href="https://github.com/olivercoad">
             <div>
                 <h1>Code</h1>
                 <p>Dev blog</p>
+                <div class="canvas" id="codecanvas"></div>
             </div>
         </a>
         <a class="card music" id="musiccard" href="https://soundcloud.com/oli_coad">
@@ -40,6 +39,10 @@
             </div>
         </a> -->
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+    <script defer src="music.js"></script>
+    <script defer src="code.js"></script>
     <script>
         //when using touch, only allow click after already hovering
         document.querySelectorAll("a.card").forEach(el => {
