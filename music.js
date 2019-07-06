@@ -115,6 +115,7 @@ var music = function(p) {
         else {
           pY = n * spacing + spacing * 4.25;
           y = n * spacing + spacing;
+          pX -= spacing;
         }
         let doNote = true;
         if(sinceBarline % 2 == 1) {
@@ -125,7 +126,7 @@ var music = function(p) {
         }
         if(doNote) {
           p.ellipse(x - spacing, n * spacing, spacing);
-          p.line(x, y, x, pY);
+          p.line(pX, y, pX, pY);
         }
         prevPx = pX;
         prevPy = pY;
